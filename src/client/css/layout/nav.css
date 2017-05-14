@@ -1,7 +1,6 @@
 .nav{
   background: #423A8F;
   padding: 21px;
-  display: none;
 
   &.fixed{
     position: fixed;

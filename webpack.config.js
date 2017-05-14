@@ -1,25 +1,25 @@
 const path = require('path')
 const webpack = require('webpack')
-const ExtractTextPlugin = require("extract-text-webpack-plugin")
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const settings = {
-  entry: './src/index.js',
+  entry: './src/client/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'src', 'public', "js")
+    path: path.resolve(__dirname, 'src', 'public', 'js')
   },
   resolve: {
-    extensions: [".js", ".json", ".css"]
+    extensions: ['.js', '.json', '.css']
   },
-  devtool: "eval-source-map",
+  devtool: 'eval-source-map',
   module: {
     rules: [
       {
         test: /\.css$/,
         use: [
-          "style-loader",
-          "css-loader",
-          "postcss-loader"
+          'style-loader',
+          'css-loader',
+          'postcss-loader'
         ]
       },
       {
@@ -27,13 +27,13 @@ const settings = {
         exclude: /node_modules/,
         use: [
           'babel-loader'
-        ],
+        ]
       }
     ]
   },
   devServer: {
-    contentBase: path.resolve("src"),
-    publicPath: "http://localhost:8080/",
+    contentBase: path.resolve('src'),
+    publicPath: 'http://localhost:8080/',
     quiet: false,
     hot: true,
     historyApiFallback: true,
@@ -45,8 +45,8 @@ const settings = {
     new webpack.LoaderOptionsPlugin({
       debug: true
     }),
-    new ExtractTextPlugin("./src/public/css/[name].css")
-  ],
+    new ExtractTextPlugin('./src/public/css/[name].css')
+  ]
 }
 
 module.exports = settings

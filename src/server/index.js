@@ -1,9 +1,9 @@
 import path from 'path'
 
-const port = process.env.PORT || 3000
-
 import routes from './routes/'
 import startServer from './app/startServer'
+
+const port = process.env.PORT || 3000
 
 export default startServer({
   port,
@@ -15,7 +15,6 @@ export default startServer({
   publicFolderDir: path.join(__dirname, '../public')
 })
 .then((app) => {
-  console.log("app started")
-  return app
+
 })
 .catch(err => console.log(err))
