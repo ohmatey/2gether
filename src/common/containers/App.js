@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom'
 import { socketConnect } from 'socket.io-react'
 
 import Chat from './Chat'
-import VideoChat from './VideoChat'
+import IndexPage from './IndexPage'
 
 class App extends React.Component {
   componentDidMount () {
@@ -15,8 +15,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <Route exact path='/video' component={VideoChat} />
-        <Route exact path='/video/chat' component={Chat} />
+        <Route exact path='/' component={IndexPage} />
       </div>
     )
   }

@@ -11,7 +11,7 @@ router.use(youtube)
 
 router.get('/chat', isLoggedIn, (req, res) => res.render('home'))
 router.get('/video', isLoggedIn, (req, res) => res.render('home'))
-router.get('*', (req, res) => res.render('index'))
+router.get('*', (req, res) => res.render('home'))
 
 router.get((err, req, res) => {
   throw new Error(err)

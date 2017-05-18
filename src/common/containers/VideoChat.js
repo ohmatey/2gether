@@ -59,7 +59,6 @@ class VideoChat extends React.Component {
   }
 
   call (id) {
-    //this.props.socket.emit('new-user', "asd")
     this.P2PCamera.startStream()
       .then(stream => {
         this.localStream = stream
@@ -83,3 +82,11 @@ class VideoChat extends React.Component {
 }
 
 export default socketConnect(connect()(VideoChat))
+function requestFullScreen(element) {
+  // Supports most browsers and their versions.
+  var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+
+  if (requestMethod) { // Native full screen.
+      requestMethod.call(element)
+  }
+}

@@ -21,6 +21,4 @@ const mapStateToProps = state => ({
   messages: state.messages.messages
 })
 
-MessageList = connect(mapStateToProps)(MessageList)
-
-export default MessageList
+export default connect(mapStateToProps)(MessageList)
