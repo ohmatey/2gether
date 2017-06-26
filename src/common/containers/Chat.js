@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import MessageList from './MessageList'
 import MessageInput from './MessageInput'
 
-class Chat extends React.Component {
+export class Chat extends React.Component {
   componentDidMount () {
 
   }
@@ -27,4 +27,4 @@ class Chat extends React.Component {
   }
 }
 
-export default connect()(socketConnect(Chat))
+// export default connect()(socketConnect(Chat))
